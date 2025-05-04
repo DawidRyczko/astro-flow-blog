@@ -4,7 +4,7 @@
 npm create astro@latest -- --template DawidRyczko/astro-flow-blog
 ```
 
-See the demo: <link>
+See the demo: https://dawidryczko.github.io/astro-flow-blog/
 
 ![screen.png](screen.png)
 
@@ -48,7 +48,6 @@ You can customize the typography for post. Check the docs here: https://flowbite
 - ✅ No image support for posts
 - ✅ No search implemented
 
-
 ## Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -61,6 +60,31 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## Deploy on Github Pages
+
+1. Fork or create a repository for your project
+2. Go to Settings and select "Pages"
+3. Setup "Source" as GitHub Actions
+4. Go to the Actions tab and run the workflow "Deploy Astro site to Pages"
+5. Check the Configuration section to setup `base` property
+
+## Configuration
+
+1. Open `astro.config.mjs` and change the `base` and `site` properties.
+   If you deploy in subfolder for example in GithubPages withoud custom domain set the base like this:
+
+Example configuration for url `https://dawidryczko.github.io/astro-flow-blog/`
+
+```aiignore
+base: '/astro-flow-blog/'
+```
+
+If you deploy without subfolder set the `base`:
+
+```aiignore
+base: '/'
+```
 
 ## Credit
 
