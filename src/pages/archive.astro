@@ -4,6 +4,8 @@ import { getCollection } from "astro:content";
 import { getPublishedPosts, sortPostsByDate } from "../utils/filterts";
 import PostDate from "../components/post/PostDate.astro";
 
+const base = import.meta.env.BASE_URL;
+
 const posts = await getCollection("blog");
 const publishedPosts = getPublishedPosts(posts);
 const sortedPosts = sortPostsByDate(publishedPosts);
@@ -34,7 +36,7 @@ const postsByYear = sortedPosts.reduce((acc: { [key: string]: any[] }, post) => 
             {posts.map((post) => (
               <li class="mb-2">
                 <PostDate date={post.data.date} />
-                <a href={`/${post.id}`} class="ml-2 hover:text-primary-500 hover:underline">
+                <a href={`${base}/${post.id}`} class="ml-2 hover:text-primary-500 hover:underline">
                   {post.data.title}
                 </a>
               </li>

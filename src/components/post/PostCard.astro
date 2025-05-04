@@ -10,10 +10,11 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, description, date, tags } = post.data;
+const base = import.meta.env.BASE_URL;
 ---
 
 <div class="mb-4 py-4 px-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-600">
-  <a href={post.id} class="hover:text-primary-500 hover:underline">
+  <a href={`${base}/${post.id}`} class="hover:text-primary-500 hover:underline">
     <h2 class="mb-1 text-2xl font-bold tracking-tight">
       {title}
     </h2>
@@ -24,7 +25,7 @@ const { title, description, date, tags } = post.data;
     <ReadTime content={post.body!} />
   </div>
   <p class="mb-3 text-lg font-normal text-gray-700 dark:text-gray-400">
-    <a href={post.id} class="hover:underline">
+    <a href={`${base}/${post.id}`} class="hover:underline">
       {description}
     </a>
   </p>
