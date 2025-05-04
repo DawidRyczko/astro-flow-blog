@@ -5,8 +5,6 @@ date: "2025-07-27"
 tags: ["astro", "theme", "customization", "markdown"]
 ---
 
-# Customizing the Astro Theme: A Deeper Dive
-
 In this post, we'll explore the customization options available in the new Astro theme. Learn how to tailor the theme to match your brand and create a unique website.
 
 ## Theme Configuration

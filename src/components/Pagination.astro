@@ -2,17 +2,19 @@
 interface Props {
   currentPage: number;
   totalPages: number;
-  baseUrl: string;
+  path: string;
 }
 
-const { currentPage, totalPages, baseUrl } = Astro.props;
+const { currentPage, totalPages, path } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <nav class="flex justify-center gap-4 mt-12">
   {
     currentPage > 1 && (
       <a
-        href={`${baseUrl}${currentPage - 1 > 1 ? currentPage - 1 : ""}`}
+        href={`${baseUrl}${path}${currentPage - 1 > 1 ? currentPage - 1 : ""}`}
         class="px-4 py-2 bg-gray-100 dark:bg-gray-600 rounded hover:bg-gray-200 dark:hover:bg-primary-500"
       >
         Previous
@@ -22,7 +24,7 @@ const { currentPage, totalPages, baseUrl } = Astro.props;
   {
     currentPage < totalPages && (
       <a
-        href={`${baseUrl}${currentPage + 1}`}
+        href={`${baseUrl}${path}${currentPage + 1}`}
         class="px-4 py-2 bg-gray-100 dark:bg-gray-600 rounded hover:bg-gray-200 dark:hover:bg-primary-500"
       >
         Next

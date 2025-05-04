@@ -5,8 +5,6 @@ date: "2024-07-28"
 tags: ["astro", "markdown", "tips", "tricks", "content"]
 ---
 
-# Mastering Markdown in Astro: Tips and Tricks
-
 Markdown is a powerful tool for creating content in Astro. In this post, we'll explore some tips and tricks for using Markdown effectively, from basic syntax to advanced features.
 
 ## Basic Markdown Syntax

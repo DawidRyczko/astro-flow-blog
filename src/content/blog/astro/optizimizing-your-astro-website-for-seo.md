@@ -5,8 +5,6 @@ date: "2024-07-29"
 tags: ["astro", "seo", "optimization", "web development"]
 ---
 
-# Optimizing Your Astro Website for SEO
-
 Search engine optimization (SEO) is crucial for ensuring that your website is visible to potential visitors. In this post, we'll explore some techniques for optimizing your Astro website for SEO and improving your online visibility.
 
 ## Meta Tags

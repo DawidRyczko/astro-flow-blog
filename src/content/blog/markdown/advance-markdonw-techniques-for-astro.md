@@ -5,8 +5,6 @@ date: "2025-07-30"
 tags: ["astro", "markdown", "blogging", "advanced", "techniques"]
 ---
 
-# Advanced Markdown Techniques for Astro Bloggers
-
 Want to take your Astro blog posts to the next level? This guide explores advanced Markdown techniques that will help you create richer, more engaging content for your readers.
 
 ## Task Lists

@@ -36,7 +36,7 @@ const postsByYear = sortedPosts.reduce((acc: { [key: string]: any[] }, post) => 
             {posts.map((post) => (
               <li class="mb-2">
                 <PostDate date={post.data.date} />
-                <a href={`${base}/${post.id}`} class="ml-2 hover:text-primary-500 hover:underline">
+                <a href={`${base}${post.id}`} class="ml-2 hover:text-primary-500 hover:underline">
                   {post.data.title}
                 </a>
               </li>

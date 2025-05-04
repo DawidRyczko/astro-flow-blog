@@ -42,6 +42,7 @@ You can customize the typography for post. Check the docs here: https://flowbite
 - ✅ Responsive
 - ✅ Social media
 - ✅ Github Pages configured
+- ✅ Support subfolder deploy
 - ✅ Just fast
 
 ### Cons:
@@ -73,12 +74,12 @@ All commands are run from the root of the project, from a terminal:
 ## Configuration
 
 1. Open `astro.config.mjs` and change the `base` and `site` properties.
-   If you deploy in subfolder for example in GithubPages withoud custom domain set the base like this:
+   If you deploy in subfolder in GithubPages without custom domain set the base URL like this:
 
 Example configuration for url `https://dawidryczko.github.io/astro-flow-blog/`
 
 ```aiignore
-base: '/astro-flow-blog'
+base: '/astro-flow-blog/'
 ```
 
 If you deploy without subfolder set the `base`:

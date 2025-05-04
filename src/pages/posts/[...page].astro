@@ -27,5 +27,5 @@ const { page } = Astro.props;
   <section>
     {page.data.map((post: any) => <PostCard post={post} />)}
   </section>
-  <Pagination currentPage={page.currentPage} totalPages={page.lastPage} baseUrl="/posts/" />
+  <Pagination currentPage={page.currentPage} totalPages={page.lastPage} path="posts/" />
 </BaseLayout>

@@ -5,6 +5,7 @@ import PostCard from "../components/post/PostCard.astro";
 import { getCollection } from "astro:content";
 import SocialLinks from "../components/SocialLinks.astro";
 import { getPublishedPosts, sortPostsByDate } from "../utils/filterts";
+import FeaturedCategory from "../components/FeaturedCategory.astro";
 
 const allPosts = await getCollection("blog");
 const published = getPublishedPosts(allPosts);
@@ -32,7 +33,29 @@ const posts = sortedByDate.slice(0, POST_ON_HOME_PAGE);
     </div>
   </section>
 
-  <h2 class="text-3xl font-semibold mb-9">New posts</h2>
+  <section class="mb-9">
+    <h2 class="text-3xl font-bold mb-9">Featured Categories</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16 mt-4">
+      <FeaturedCategory
+        title="Astro"
+        content="Exploring the features and possibilities of the new Astro theme with a demo post."
+        href="astro"
+      />
+      <FeaturedCategory
+        title="Markdown"
+        content="Learn the essential Markdown syntax for formatting text, creating lists, adding links, and more. A simple way to structure content for the web."
+        href="markdown"
+      />
+      <FeaturedCategory title="Theme" content="Explore a curated collection of themes." href="theme" />
+      <FeaturedCategory
+        title="Tricks"
+        content="Discover clever techniques and tips for optimizing your Astro project."
+        href="tricks"
+      />
+    </div>
+  </section>
+
+  <h2 class="text-3xl font-bold mb-9">New Posts</h2>
   <section class="">
     {posts.map((post: any) => <PostCard post={post} />)}
   </section>

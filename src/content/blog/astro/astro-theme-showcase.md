@@ -5,8 +5,6 @@ date: "2025-07-26"
 tags: ["astro", "theme", "showcase", "markdown", "lorem ipsum"]
 ---
 
-# Welcome to the New Astro Theme!
-
 This post serves as a quick demonstration of the new Astro theme and its capabilities. Let's dive in and see what's possible.
 
 ## Getting Started
