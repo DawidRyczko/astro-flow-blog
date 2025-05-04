@@ -22,7 +22,7 @@ const baseUrl = import.meta.env.BASE_URL;
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="icon" type="image/svg+xml" href={`${baseUrl}/favicon.svg`} />
   <link rel="sitemap" href={`${baseUrl}/sitemap-index.xml`} />
-  <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={`${url}rss.xml`} />
+  <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={`${url}/rss.xml`} />
   <meta name="generator" content={Astro.generator} />
 
   {GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={GOOGLE_ANALYTICS_ID} />}
@@ -39,12 +39,12 @@ const baseUrl = import.meta.env.BASE_URL;
   <meta property="og:url" content={Astro.url} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={`${url}${OPEN_GRAPH_IMAGE}`} />
+  <meta property="og:image" content={`${url}/${OPEN_GRAPH_IMAGE}`} />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content={Astro.url} />
   <meta property="twitter:title" content={title} />
   <meta property="twitter:description" content={description} />
-  <meta property="twitter:image" content={`${url}${OPEN_GRAPH_IMAGE}`} />
+  <meta property="twitter:image" content={`${url}/${OPEN_GRAPH_IMAGE}`} />
 </head>
