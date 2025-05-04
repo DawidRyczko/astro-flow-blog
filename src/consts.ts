@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Site config
-export const SITE_URL = ""; // your https url
+export const SITE_URL = "https://dawidryczko.github.io/astro-flow-blog/"; // your https url
 export const SITE_TITLE = "My Simple Blog"; // your base page title
 export const SITE_DESCRIPTION = "Welcome to my website!"; // your base description
 export const HEADER_TITLE = "Lorem Ipsum"; // your title used in header

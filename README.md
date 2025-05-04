@@ -78,7 +78,7 @@ All commands are run from the root of the project, from a terminal:
 Example configuration for url `https://dawidryczko.github.io/astro-flow-blog/`
 
 ```aiignore
-base: '/astro-flow-blog/'
+base: '/astro-flow-blog'
 ```
 
 If you deploy without subfolder set the `base`:
