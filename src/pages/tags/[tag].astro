@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from "astro:content";
+import { getPostsByTag, getPublishedPosts, getAllTags, sortPostsByDate } from "../../utils/filterts";
+import PostCard from "../../components/post/PostCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const tags = getAllTags(posts);
+  return tags.map((tag: string) => {
+    const published = getPublishedPosts(posts);
+    const filteredByTag = getPostsByTag(published, tag);
+    return {
+      params: { tag: tag },
+      props: { posts: filteredByTag },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const sortedByDate = sortPostsByDate(posts);
+---
+
+<BaseLayout title={`Pages with #${tag} tag`} description={`The page show all posts with #${tag} tag`}>
+  <h1 class="text-4xl font-semibold mb-9">Posts with tag <span class="italic font-extrabold">#{tag}</span></h1>
+  <section>
+    {sortedByDate.map((post: any) => <PostCard post={post} />)}
+  </section>
+</BaseLayout>

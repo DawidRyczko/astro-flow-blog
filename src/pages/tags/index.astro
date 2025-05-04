@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { getPostsByTag, getAllTags } from "../../utils/filterts";
+
+const posts = await getCollection("blog");
+const tags = getAllTags(posts);
+const tagCounts = tags.map((tag) => ({
+  name: tag,
+  count: getPostsByTag(posts, tag).length,
+}));
+
+const COLORS = [
+  "text-red-500 dark:text-red-400",
+  "text-green-500 dark:text-green-400",
+  "text-blue-500 dark:text-blue-400",
+  "text-yellow-500 dark:text-yellow-400",
+  "text-purple-500 dark:text-purple-400",
+  "text-pink-500 dark:text-pink-400",
+  "text-orange-500 dark:text-orange-400",
+  "text-teal-500 dark:text-teal-400",
+  "text-lime-500 dark:text-lime-400",
+  "text-indigo-500 dark:text-indigo-400",
+  "text-violet-500 dark:text-violet-400",
+  "text-fuchsia-500 dark:text-fuchsia-400",
+  "text-emerald-500 dark:text-emerald-400",
+  "text-sky-500 dark:text-sky-400",
+  "text-amber-500 dark:text-amber-400",
+  "text-rose-500 dark:text-rose-400",
+];
+
+const getRandomColor = () => {
+  return COLORS[Math.floor(Math.random() * COLORS.length)];
+};
+---
+
+<BaseLayout
+  title="Explore all my tags"
+  description="Browse all tags used on blog. Explore topics and find related posts."
+>
+  <h1 class="text-4xl font-semibold mb-9">Explore tags on page</h1>
+  <div class="flex flex-wrap justify-center gap-4">
+    {
+      tagCounts.map(({ name, count }) => (
+        <a
+          href={`/tags/${name}`}
+          class="inline-flex flex-col items-center font-medium mb-4 p-4 rounded-2xl bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-primary-500 transition-colors duration-200"
+          aria-label={`View all posts tagged with ${name}`}
+        >
+          <span class="text-md font-extrabold mb-1 text-gray-700 dark:text-gray-300">{count} posts</span>
+          <span class={`text-xl ${getRandomColor()}`}>#{name}</span>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

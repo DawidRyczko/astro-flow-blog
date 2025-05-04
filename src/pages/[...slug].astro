@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostDate from "../components/post/PostDate.astro";
+import TagChip from "../components/post/TagChip.astro";
+import ReadTime from "../components/post/ReadTime.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { title, description, date, tags } = post.data;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <h1 class="mb-9 text-4xl md:text-5xl text-center">{title}</h1>
+    <div class="mb-9 flex flex-col md:flex-row md:justify-start items-center">
+      <div
+        class="mr-0 md:mr-6 pr-0 md:pr-6 mb-9 md:mb-0 shrink-0 md:border-r border-gray-300 dark:border-gray-600 text-center md:text-left"
+      >
+        <PostDate date={date} />
+        <div class="text-gray-700 dark:text-gray-400">
+          <ReadTime content={post.body!} />
+        </div>
+      </div>
+      <div class="text-lg text-gray-700 dark:text-gray-300 text-center md:text-left">{description}</div>
+    </div>
+
+    <hr class="mb-9 border-gray-300 dark:border-gray-600 w-1/5 mx-auto" />
+
+    <div class="mb-9 format dark:format-invert">
+      <Content />
+    </div>
+    <div class="mb-9">
+      {tags.map((tag: string) => <TagChip tag={tag} href="#" />)}
+    </div>
+  </article>
+</BaseLayout>

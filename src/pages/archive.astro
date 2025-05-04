@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { getPublishedPosts, sortPostsByDate } from "../utils/filterts";
+import PostDate from "../components/post/PostDate.astro";
+
+const posts = await getCollection("blog");
+const publishedPosts = getPublishedPosts(posts);
+const sortedPosts = sortPostsByDate(publishedPosts);
+
+const postsByYear = sortedPosts.reduce((acc: { [key: string]: any[] }, post) => {
+  const year = post.data.date.getFullYear();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(post);
+  return acc;
+}, {});
+---
+
+<BaseLayout
+  title="Explore Archive"
+  description="Archive of posts. Browse a comprehensive collection of all blog entries."
+>
+  <h1 class="text-4xl font-semibold mb-9">Explore the Archive</h1>
+  {
+    Object.entries(postsByYear)
+      .sort((a, b) => b[0].localeCompare(a[0]))
+      .map(([year, posts]) => (
+        <div class="mb-9 w-full">
+          <h2 class="text-2xl font-semibold mb-2 text-center">{year}</h2>
+          <hr class="mb-9 mt-4 w-1/5 mx-auto border-gray-300 dark:border-gray-600" />
+          <ul>
+            {posts.map((post) => (
+              <li class="mb-2">
+                <PostDate date={post.data.date} />
+                <a href={`/${post.id}`} class="ml-2 hover:text-primary-500 hover:underline">
+                  {post.data.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+  }
+</BaseLayout>

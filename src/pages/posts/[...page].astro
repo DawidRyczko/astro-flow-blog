@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostCard from "../../components/post/PostCard.astro";
+import Pagination from "../../components/Pagination.astro";
+import { type Page } from "astro";
+import { getPublishedPosts, sortPostsByDate } from "../../utils/filterts";
+import { POSTS_PER_PAGE } from "../../consts";
+
+interface Props {
+  page: Page;
+}
+
+export async function getStaticPaths({ paginate }) {
+  const posts = await getCollection("blog");
+  const published = getPublishedPosts(posts);
+  const sortedByDate = sortPostsByDate(published);
+
+  return paginate(sortedByDate, { pageSize: POSTS_PER_PAGE });
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title="Explore all posts" description="- Browse every blog post I've written.">
+  <h1 class="text-4xl font-semibold mb-9">Explore all my posts</h1>
+  <section>
+    {page.data.map((post: any) => <PostCard post={post} />)}
+  </section>
+  <Pagination currentPage={page.currentPage} totalPages={page.lastPage} baseUrl="/posts/" />
+</BaseLayout>

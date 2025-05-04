@@ -1,0 +1,40 @@
+---
+import GithubIcon from "./icons/GithubIcon.astro";
+import EmailIcon from "./icons/EmailIcon.astro";
+import RssIcons from "./icons/RssIcon.astro";
+import XIcon from "./icons/XIcon.astro";
+import InstagramIcon from "./icons/InstagramIcon.astro";
+import FacebookIcon from "./icons/FacebookIcon.astro";
+import LinkedIn from "./icons/LinkedinIcon.astro";
+import { EMAIL, FACEBOOK, GITHUB, INSTAGRAM, LINKEDIN, RSS, X } from "../consts";
+
+const socialLinks = [
+  { component: GithubIcon, href: GITHUB, aria: "Visit GitHub profile" },
+  { component: LinkedIn, href: LINKEDIN, aria: "Visit LinkedIn profile" },
+  { component: XIcon, href: X, aria: "Visit X profile" },
+  { component: FacebookIcon, href: FACEBOOK, aria: "Visit Facebook profile" },
+  { component: InstagramIcon, href: INSTAGRAM, aria: "Visit Instagram profile" },
+  { component: EmailIcon, href: EMAIL, aria: "Send an email" },
+  { component: RssIcons, href: RSS, aria: "View RSS feed" },
+];
+---
+
+<div class="flex items-center space-x-4">
+  {
+    socialLinks.map(
+      (link) =>
+        link.href && (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cursor-pointer text-gray-700 hover:text-gray-400 dark:text-white dark:hover:text-gray-600"
+            aria-label={link.aria}
+          >
+            <span class="sr-only">{link.aria}</span>
+            <link.component />
+          </a>
+        ),
+    )
+  }
+</div>

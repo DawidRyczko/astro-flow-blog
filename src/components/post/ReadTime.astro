@@ -1,0 +1,21 @@
+---
+function calculateReadingTime(content: string) {
+  const wordsPerMinute = 200;
+  const wordCount = content.split(/\s+/).length;
+  const readingTimeInMinutes = wordCount / wordsPerMinute;
+  const minutes = Math.floor(readingTimeInMinutes);
+
+  if (minutes > 1) {
+    return `${minutes} min read`;
+  }
+
+  return "1 min read";
+}
+
+interface Props {
+  content: string;
+}
+const { content } = Astro.props;
+---
+
+<span class="text-sm">{calculateReadingTime(content)}</span>

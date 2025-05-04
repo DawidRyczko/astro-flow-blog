@@ -1,17 +1,27 @@
 {
-  "name": "flowbite-zacznij",
+  "name": "astro-flow-blog",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --plugin prettier-plugin-astro --write '**/*.{astro,ts,js}'"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.4",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.3.0",
-    "astro": "^5.7.0"
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.0",
+    "flowbite": "^3.1.2",
+    "tailwindcss": "^4.1.4",
+    "astro-google-analytics": "^1.0.3"
+  },
+  "devDependencies": {
+    "flowbite-typography": "^1.0.5",
+    "prettier": "3.5.3",
+    "prettier-plugin-astro": "0.14.1"
   }
 }
