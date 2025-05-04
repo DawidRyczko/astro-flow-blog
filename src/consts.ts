@@ -25,4 +25,4 @@ export const X = "https://x.com";
 export const FACEBOOK = "https://facebook.com";
 export const INSTAGRAM = "https://instagram.com";
 export const EMAIL = "mailto:example@example.com";
-export const RSS = `${baseUrl}rss.xml`;
+export const RSS = `${baseUrl}/rss.xml`;

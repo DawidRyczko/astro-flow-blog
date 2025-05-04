@@ -40,6 +40,7 @@ You can customize the typography for post. Check the docs here: https://flowbite
 - ✅ Google Analytics
 - ✅ Dark / light mode
 - ✅ Responsive
+- ✅ Pagination
 - ✅ Social media
 - ✅ Github Pages configured
 - ✅ Support subfolder deploy
@@ -88,7 +89,7 @@ If you deploy without subfolder set the `base`:
 base: '/'
 ```
 
-## Credit
+## Credits
 
 This theme is inspired by:
 
