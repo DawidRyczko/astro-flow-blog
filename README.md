@@ -41,6 +41,7 @@ You can customize the typography for post. Check the docs here: https://flowbite
 - ✅ Dark / light mode
 - ✅ Responsive
 - ✅ Social media
+- ✅ Github Pages configured
 - ✅ Just fast
 
 ### Cons:
