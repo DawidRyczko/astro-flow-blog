@@ -1,12 +1,12 @@
 # Astro Flow - Simple Blog
 
 ```sh
-npm create astro@latest -- --template DawidRyczko/astro-flow-blog
+npm create astro@latest -- --template DawidRyczko/astro-flow-blog-theme
 ```
 
-See the demo: https://dawidryczko.github.io/astro-flow-blog/
+See the demo: https://dawidryczko.github.io/astro-flow-blog-theme/
 
-![screen.png](screen.png)
+![screen.png](screen.jpg)
 
 ## Features:
 
@@ -38,12 +38,12 @@ See the demo: https://dawidryczko.github.io/astro-flow-blog/
 1. Open `astro.config.mjs` and change the `base` and `site` properties.
    
 You can also deploy this blog in subfolder. For example, this theme is deployed on Github Pages without custom domain. The
-   repo `astro-flow-blog` is a subfolder for my Github domain `https://dawidryczko.github.io/`.
+   repo `astro-flow-blog-theme` is a subfolder for my Github domain `https://dawidryczko.github.io/`.
 
-The `base` property for URL and subfolder `https://dawidryczko.github.io/astro-flow-blog` is:
+The `base` property for URL and subfolder `https://dawidryczko.github.io/astro-flow-blog-theme` is:
 
 ```aiignore
-base: '/astro-flow-blog'
+base: '/astro-flow-blog-theme'
 ```
 
 If you deploy without subfolder set the `base`:

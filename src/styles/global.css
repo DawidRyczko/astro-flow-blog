@@ -10,17 +10,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --color-primary-50: #faefef;
-    --color-primary-100: #f5dcdc;
-    --color-primary-200: #eab8b8;
-    --color-primary-300: #e09595;
-    --color-primary-400: #d57171;
-    --color-primary-500: #cb4f4f;
-    --color-primary-600: #ad3333;
-    --color-primary-700: #822626;
-    --color-primary-800: #571a1a;
-    --color-primary-900: #2b0d0d;
-    --color-primary-950: #180707;
+    --color-primary-50: #f2faef;
+    --color-primary-100: #e5f6e0;
+    --color-primary-200: #c7ebbc;
+    --color-primary-300: #ade19d;
+    --color-primary-400: #90d77a;
+    --color-primary-500: #74cd5a;
+    --color-primary-600: #54b437;
+    --color-primary-700: #40892a;
+    --color-primary-800: #2a5a1b;
+    --color-primary-900: #162f0e;
+    --color-primary-950: #0b1707;
 
     --font-sans: "Inter", "ui-sans-serif", "system-ui", "-apple-system", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue",
     "Arial", "Noto Sans", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

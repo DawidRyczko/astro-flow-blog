@@ -20,7 +20,7 @@ const isActive = href === pathname || href === "/" + (subpath?.[0] || "");
         "text-white bg-primary-700 md:bg-transparent md:text-primary-500 dark:text-white md:dark:text-primary-400":
           isActive,
 
-        "text-gray-900 md:border-0 hover:text-primary-700 dark:text-white": !isActive,
+        "text-gray-900 md:border-0 hover:text-primary-500 dark:text-white": !isActive,
       },
     ]}
     aria-current={isActive ? "page" : undefined}
