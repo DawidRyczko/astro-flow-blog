@@ -9,6 +9,7 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* You can define your color here https://www.tints.dev */
 @theme {
     --color-primary-50: #f2faef;
     --color-primary-100: #e5f6e0;
